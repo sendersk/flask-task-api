@@ -29,15 +29,25 @@ Storage is in-memory for simplificity, making it ideal for prototyping.
 ```
 flask_task_api/
 │
-├── app.py          # Entry point, initializes Flask app
-├── routes.py       # API routes (endpoints)
-├── models.py       # Task model (structure and validation)
-├── storage.py      # In-memory storage logic
-├── utils.py        # Helper functions (e.g., input validation)
-├── tests.py        # Unit tests for API
-├── requirements.txt# Dependencies (Flask, etc.)
-├── README.md       # Project documentation
-└── .gitignore      # Ignore venv, pycache, etc.
+├── main.py           # Entry point, initializes Flask app (includes GUI + API)
+├── routes.py         # API routes (endpoints)
+├── models.py         # Task model (structure and validation)
+├── storage.py        # In-memory storage logic
+├── utils.py          # Helper functions (e.g., input validation)
+├── tests.py          # Unit tests for API
+│
+├── templates/        # Jinja2 templates for GUI
+│   ├── base.html     # Shared layout
+│   ├── index.html    # Task list
+│   ├── add.html      # Add task form
+│   └── edit.html     # Edit task form
+│
+├── static/           # Static assets
+│   └── style.css     # Basic styling
+│
+├── requirements.txt  # Dependencies (Flask, etc.)
+├── README.md         # Project documentation
+└── .gitignore        # Ignore venv, etc.
 ```
 
 ---
