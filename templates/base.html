@@ -6,17 +6,19 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <header>
-    <h1>Task Manager</h1>
-    <nav>
-      <a href="{{ url_for('index') }}">Home</a> |
-      <a href="{{ url_for('add_task_gui') }}">Add Task</a>
-    </nav>
-    <hr>
-  </header>
+    <div class="container">
+        <header>
+          <h1>Task Manager</h1>
+          <nav>
+            <a href="{{ url_for('index') }}">Home</a> |
+            <a href="{{ url_for('add_task_gui') }}">Add Task</a>
+          </nav>
+          <hr>
+        </header>
 
-  <main>
-    {% block content %}{% endblock %}
-  </main>
+        <main>
+          {% block content %}{% endblock %}
+        </main>
+    </div>
 </body>
 </html>
