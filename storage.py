@@ -16,7 +16,11 @@ def _load_from_file():
     global tasks, _next_id
     if os.path.exists(TASKS_FILE):
         with open(TASKS_FILE, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            try:
+                data = json.load(f)
+            except json.JSONDecodeError:
+                data = {}
+
             tasks = {int(k): Task(**v) for k, v in data.items()}
             _next_id = max(tasks.keys(), default=0) + 1
 
